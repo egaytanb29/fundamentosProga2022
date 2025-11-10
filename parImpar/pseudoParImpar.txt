@@ -1,0 +1,13 @@
+ENTERO num, residuo
+
+INICIO
+        ESCRIBIR "Introduzca un número."
+        LEER num
+        residuo = num mod 2
+        SI residuo == 0
+                ENTONCES
+                        Mostrar"El número es par"
+        SI_NO
+                Mostrar "EL número es impar"
+        FIN_SI
+FIN
