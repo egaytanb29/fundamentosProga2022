@@ -1,0 +1,11 @@
+Declaración: cont,num,x Entero
+
+INICIO
+        IMPRIMIR "Ingrese un número del 1 al 9: "
+        LEER num
+        PARA i=1 HASTA i<=num CON PASO 1 HACER
+                PARA cont=1 HASTA cont<=num CON PASO 1 HACER
+                IMPRIMIR cont
+                FIN PARA
+        FIN PARA
+FIN Programa
