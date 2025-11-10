@@ -1,0 +1,24 @@
+Definición num,x,a Entero
+
+INICIO
+        IMPRIMIR "Adivina el número."
+        IMPRIMIR "Tienes 5 intentos."
+        Num = 19
+        x = 5
+        MIENTRAS x>0 HACER
+                IMPRIMIR "Ingresa un número."
+                LEER a
+                SI Num==a ENTONCES
+                        IMPRIMIR "Felicidades, adivinaste el número."
+                        x=0
+                SI_NO
+                        x=x-1
+                        SI x==0 ENTONCES
+                                IMPRIMIR "Has fallado los 5 intentos."
+                                IMPRIMIR "El número es: Num"
+                        SI_NO
+                                IMPRIMIR "Fallaste, te queda otro intento."
+                        FIN_SI
+                FIN_SI
+        FIN_MIENTRAS
+FIN
