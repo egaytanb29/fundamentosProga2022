@@ -1,0 +1,15 @@
+Declaración: In1, In2, In3 como Char
+             Num, Cont como Entero
+
+INICIO
+        IMPRIMIR "Ingrese la inicial de tu nombre."
+        LEER In1
+        IMPRIMIR "Ingrese la inicial de tu apellido paterno."
+        LEER In2
+        IMPRIMIR "Ingrese la inicial de tu apellido materno."
+        LEER In3
+        IMPRIMIR "Ingrese la cantidad de veces que quiera que se imprima."
+        LEER Num
+        PARA (count=1;count<= Num; count++)
+        IMPRIMIR "In1., In2., In3."
+FIN Programa
