@@ -1,0 +1,10 @@
+Declaración: num1, num2, R1, R2 como Entero
+
+INICIO
+        IMPRIMIR "Dame un número."
+        LEER num1
+        IMPRIMIR "Dame otro número."
+        LEER num2
+        R1 = "(a+b)(a-b)" = (num1*num1) "-" (num2*num2)
+        R2 = "a² - b²" = (num1*num1) "-" (num2*num2)
+FIN Programa
