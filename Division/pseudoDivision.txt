@@ -1,0 +1,12 @@
+Declaración: N1, N2, Result, Res como Real
+
+INICIO
+        IMPRIMIR "Dame un número (numerador)."
+        LEER N1
+        IMPRIMIR "Dame el otro número (denominador);"
+        LEER N2
+        Result = N1/N2
+        Res = N1 MOD N2
+        IMPRIMIR "El cociente es: ", Result
+        IMPRIMIR "El residuo es: ", Res
+FIN PROGRAMA
