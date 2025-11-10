@@ -1,0 +1,11 @@
+Declaración: Num, Cont como Entero
+
+INICIO
+        IMPRIMIR "Ingrese del 11 al 200 para indicar los números pares de forma descendente."
+        Cont = 1
+        LEER Num
+        MIENTRAS Num >11 y <200 hacer
+                IMPRIMIR Count
+                Count=Count+1
+        FIN_MIENTRAS
+FIN Programa
