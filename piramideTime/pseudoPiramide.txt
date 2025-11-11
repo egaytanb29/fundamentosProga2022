@@ -1,0 +1,22 @@
+Declaración: n,n1,i,j,b,count como Entero
+             Caracter l[26] = {'A'}
+
+INICIO
+        l[ AZAR(26) ]
+        count=1
+        PARA i<=n HASTA 1 CON PASO 1 HACER
+                PARA b<=n-1 HASTA 1 CON PASO 1 HACER
+                        IMPRIMIR " "
+                FIN_PARA
+                PARA j<=(count/2) HASTA 0 CON PASO 1 HACER
+                        IMPRIMIR l++
+                FIN_PARA
+        l=l-2
+        PARA j<(count/2) HASTA 0 CON PASO 1 HACER
+                IMPRIMIR l--
+        FIN_PARA
+        count=count+2
+        l='A'
+        IMPRIMIR Salto_Línea
+        FIN_PARA
+FIN
