@@ -1,0 +1,17 @@
+Declaración: n,a,b,c, como Entero
+
+INICIO
+        IMPRIMIR "Ingrese la cantidad de números para realizar la serie Fibonacci."
+        LEER n
+        a=0
+        b=1
+        HACER
+                PARA (i=1;i<=n;i++)
+                        IMPRIMIR a
+                        c = a+b
+                        a=b
+                        b=c
+                        i++
+                FIN_PARA
+        REPETIR MIENTRAS (n<=32000)
+FI
