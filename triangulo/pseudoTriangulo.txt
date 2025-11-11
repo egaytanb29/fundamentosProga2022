@@ -1,0 +1,22 @@
+Declaración: L1,L2,L3,P como Entero
+
+INICIO
+        IMPRIMIR "Ingrese el primer lado: "
+        LEER L1
+        IMPRIMIR "Ingrese el segundo lado: "
+        LEER L2
+        IMPRIMIR "Ingrese el tercer lado: "
+        LEER L3
+        SI (L1==L2) y (L1==L3) ENTONCES
+        P = L1+L2+L3
+        IMPRIMIR "El triángulo es Equilátero y su perímetro es: "
+        SI_NO
+                SI (L1==L2) o (L2==L3) o (L1==L3) ENTONCES
+                P = L1+L2+L3
+                IMPRIMIR "El triángulo es Isósceles y su perímetro es: "
+                SINO
+                P = L1+L2+L3
+                IMPRIMIR "El triángulo es Escaleno y su perímetro es: "
+                FIN_SI
+        FIN_SI
+FINPrograma
