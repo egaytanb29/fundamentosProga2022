@@ -1,0 +1,21 @@
+Declaración: n1,n2,x,y,r como Entero
+
+INICIO
+        IMPRIMIR "Dame el primer número."
+        LEER n1
+        IMPRIMIR "Dame el segundo número."
+        LEER n2
+        SI n1>n2 ENTONCES
+           x=n1
+           y=n2
+        SI_NO
+           x=n2
+           y=n1
+        FIN_SI
+        HACER
+                r=y
+                y=x%y
+                a=r
+        MIENTRAS b!=0
+        IMPRIMIR "El máximo común divisor entre n1 y n2 es r."
+FIN
