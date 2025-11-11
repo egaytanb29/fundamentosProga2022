@@ -1,0 +1,163 @@
+Declaración: d1P1=0,d2P1= 0,d3P1= 0, d4P1= 0, d5P1= 0, int=3, d1CPU= 0, d2CPU= 0, d3CPU= 0, d4CPU= 0, d5CPU= 0,
+             sumaP1,sumaCPU,QuintillaP1,QuintillaCPU,PokerP1,PokerCPU,FullP1,FullCPU,TerciaP1,TerciaCPU,DParP1,DParCPU,\
+ParP1,ParCPU
+             n=0, may=14, men=9 como Entero
+             opc como Carácter
+INICIO
+        ENTERO dados(VACIO)
+                n = AZAR(may-men+1)+men
+                REGRESAR n
+        FIN dados
+
+        IMPRIMIR Bienvenido al Juego del Cubilete
+        IMPRIMIR Los dados van del 9 al 14: el 11 = Jack, 12 = Reina, 13 = Rey, 14 = As
+
+        MIENTRAS (opc=='y') HACER
+                d1P1 = dados()
+                IMPRIMIR En el dado 1 obtuvo: d1P1
+                IMPRIMIR Escriba 'y' para volver a lanzar o 'n' para lanzar el siguiente dado.
+                LEER opc
+        FIN_MIENTRAS
+        MIENTRAS (opc=='y') HACER
+                d2P1 = dados()
+                IMPRIMIR En el dado 2 obtuvo: d1P2
+                IMPRIMIR Escriba 'y' para volver a lanzar o 'n' para lanzar el siguiente dado.
+                LEER opc
+        FIN_MIENTRAS
+        MIENTRAS (opc=='y') HACER
+              d3P1 = dados()
+                IMPRIMIR En el dado 3 obtuvo: d1P3
+                IMPRIMIR Escriba 'y' para volver a lanzar o 'n' para lanzar el siguiente dado.
+                LEER opc
+        FIN_MIENTRAS
+        MIENTRAS (opc=='y') HACER
+                d4P1 = dados()
+                IMPRIMIR En el dado 4 obtuvo: d1P4
+                IMPRIMIR Escriba 'y' para volver a lanzar o 'n' para lanzar el siguiente dado.
+                LEER opc
+        FIN_MIENTRAS
+        MIENTRAS (opc=='y') HACER
+                d5P1 = dados()
+                IMPRIMIR En el dado 5 obtuvo: d1P5
+                IMPRIMIR Escriba 'y' para volver a lanzar o 'n' para lanzar el siguiente dado.
+                LEER opc
+        FIN_MIENTRAS
+
+        IMPRIMIR Los dados que obtuviste fueron: d1P1, d2P1, d3P1, d4P1, d5P1
+        sumaP1=d1P1+d2P1+d3P1+d4P1+d5P1
+
+        SI (d1P1==d2P1==d3P1==d4P1==d5P1) ENTONCES
+                IMPRIMIR El jugador tiene Quintilla
+                QuintillaP1
+        FIN_SI
+        SINO ((d1P1==d2P1==d3P1==d4P1) O (d1P1==d3P1==d4P1==d5P1) O (d1P1==d2P1==d4P1==d5P1) O (d1P1==d2P1==d3P1==d5P1) O (d2P1==d3P1==d4P1==d5P1)) ENTONCES
+                IMPRIMIR El jugador tiene Poker
+                PokerP1
+        FIN_SINO_ENTONCES
+        SINO (((d3P1==d4P1==d5P1)Y(d1P1==d2P1)) O ((d2P1==d4P1==d5P1)Y(d1P1==d3P1)) O ((d2P1==d3P1==d5P1)Y(d1P1==d4P1)) O ((d2P1==d3P1==d4P1)Y(d1P1==d5P1)) O
+             ((d1P1==d4P1==d5P1)Y(d2P1==d3P1)) O ((d1P1==d3P1==d5P1)Y(d2P1==d4P1)) O ((d2P1==d3P1==d4P1)Y(d2P1==d5P1)) O ((d1P1==d2P1==d5P1)Y(d3P1==d4P1)) O
+             ((d1P1==d2P1==d4P1)Y(d3P1==d5P1)) O ((d1P1==d2P1==d3P1)Y(d4P1==d5P1))) ENTONCES
+                IMPRIMIR El jugador tiene Full
+                FullP1
+        FIN_SINO_ENTONCES
+        SINO ((d3P1==d4P1==d5P1) O (d2P1==d4P1==d5P1) O (d2P1==d3P1==d5P1) O (d2P1==d3P1==d4P1) O (d1P1==d4P1==d5P1) O (d1P1==d3P1==d5P1) O (d2P1==d3P1==d4P1) O
+              (d1P1==d2P1==d5P1) O (d1P1==d2P1==d4P1) O (d1P1==d2P1==d3P1)) ENTONCES
+                IMPRIMIR El jugador tiene Tercia
+                TerciaP1
+        FIN_SINO_ENTONCES
+        SINO (((d1P1==d2P1)Y(d3P1==d4P1)) O ((d1P1==d5P1)Y(d2P1==d3P1)) O ((d1P1==d4P1)Y(d2P1==d5P1)) O ((d1P1==d3P1)Y(d4P1==d5P1)) O ((d3P1==d5P1)Y(d2P1==d4P1))) ENTONCES
+                IMPRIMIR El jugador tiene Dos Pares
+                DParP1
+        FIN_SINO_ENTONCES
+        SINO ((d1P1==d2P1) O (d3P1==d4P1) O (d1P1==d5P1) O (d1P1==d4P1) O (d1P1==d3P1) O (d2P1==d3P1) O (d2P1==d4P1) O (d2P1==d5P1) O (d3P1==d5P1) O (d4P1==d5P1)) ENTONCES
+                IMPRIMIR El jugador tiene Un Par
+                ParP1
+        FIN_SINO_ENTONCES
+        SINO
+                IMPRIMIR El jugador no tiene tirada
+        FIN_SINO
+
+        d1CPU = dados()
+        d2CPU = dados()
+        d3CPU = dados()
+        d4CPU = dados()
+        d5CPU = dados()
+        IMPRIMIR Los dados que obtuvo el CPU fueron: d1CPU, d2CPU, d3CPU, d4CPU, d5CPU
+        sumaCPU=d1CPU+d2CPU+d3CPU+d4CPU+d5CPU
+
+        SI (d1CPU==d2CPU==d3CPU==d4CPU==d5CPU) ENTONCES
+                IMPRIMIR El CPU tiene Quintilla
+                QuintillaCPU
+        FIN_SI
+        SINO ((d1CPU==d2CPU==d3CPU==d4CPU) O (d1CPU==d3CPU==d4CPU==d5CPU) O (d1CPU==d2CPU==d4CPU==d5CPU) O (d1CPU==d2CPU==d3CPU==d5CPU) O (d2CPU==d3CPU==d4CPU==d5CPU)) ENTONCES
+                IMPRIMIR El CPU tiene Poker
+                PokerCPU
+        FIN_SINO_ENTONCES
+        SINO (((d3CPU==d4CPU==d5CPU)Y(d1CPU==d2CPU)) O ((d2CPU==d4CPU==d5CPU)Y(d1CPU==d3CPU)) O ((d2CPU==d3CPU==d5CPU)Y(d1CPU==d4CPU)) O ((d2CPU==d3CPU==d4CPU)Y(d1CPU==d5CPU)) O
+             ((d1CPU==d4CPU==d5CPU)Y(d2CPU==d3CPU)) O ((d1CPU==d3CPU==d5CPU)Y(d2CPU==d4CPU)) O ((d2CPU==d3CPU==d4CPU)Y(d2CPU==d5CPU)) O ((d1CPU==d2CPU==d5CPU)Y(d3CPU==d4CPU)) O
+             ((d1CPU==d2CPU==d4CPU)Y(d3CPU==d5CPU)) O ((d1CPU==d2CPU==d3CPU)Y(d4CPU==d5CPU))) ENTONCES
+                IMPRIMIR El CPU tiene Full
+                FullCPU
+        FIN_SINO_ENTONCES
+        SINO ((d3CPU==d4CPU==d5CPU) O (d2CPU==d4CPU==d5CPU) O (d2CPU==d3CPU==d5CPU) O (d2CPU==d3CPU==d4CPU) O (d1CPU==d4CPU==d5CPU) O (d1CPU==d3CPU==d5CPU) O (d2CPU==d3CPU==d4CPU) O
+              (d1CPU==d2CPU==d5CPU) O (d1CPU==d2CPU==d4CPU) O (d1CPU==d2CPU==d3CPU)) ENTONCES
+                IMPRIMIR El CPU tiene Tercia
+                TerciaCPU
+        FIN_SINO_ENTONCES
+        SINO (((d1CPU==d2CPU)Y(d3CPU==d4CPU)) O ((d1CPU==d5CPU)Y(d2CPU==d3CPU)) O ((d1CPU==d4CPU)Y(d2CPU==d5CPU)) O ((d1CPU==d3CPU)Y(d4CPU==d5CPU)) O
+              ((d3CPU==d5CPU)Y(d2CPU==d4CPU))) ENTONCES
+                IMPRIMIR El CPU tiene Dos Pares
+                DParCPU
+        FIN_SINO_ENTONCES
+        SINO ((d1CPU==d2CPU) O (d3CPU==d4CPU) O (d1CPU==d5CPU) O (d1CPU==d4CPU) O (d1CPU==d3CPU) O (d2CPU==d3CPU) O (d2CPU==d4CPU) O (d2CPU==d5CPU) O (d3CPU==d5CPU) O
+                (d4CPU==d5CPU)) ENTONCES
+                IMPRIMIR El CPU tiene Un Par
+                ParCPU
+        FIN_SINO_ENTONCES
+        SINO
+                IMPRIMIR El CPU no tiene tirada
+        FIN_SI
+
+        SI (QuintillaP1==QuintillaCPU) ENTONCES
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO (PokerP1==PokerCPU) ENTONCES
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIE El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO (FullP1==FullCPU) ENTONCES
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO (TerciaP1==TerciaCPU) ENTONCES
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO (DParP1==DParCPU) ENTONCES
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO (ParP1==ParCPU) ENTONCES
+                SI(sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es: P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+                FIN_SI
+        SINO
+                SI (sumaP1>sumaCPU) ENTONCES
+                IMPRIMIR El ganador es P1
+                SINO
+                IMPRIMIR El ganador es: CPU
+        FIN_SI
+FIN
