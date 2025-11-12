@@ -5,8 +5,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-typedef int bool; //Declara un tipo especial de variable, denominada booleana que solo puede tener dos valores: cierto \
-y falso
+typedef int bool; //Declara un tipo especial de variable, denominada booleana que solo puede tener dos valores: cierto y falso
 #define FALSE 0
 #define TRUE 1
 
