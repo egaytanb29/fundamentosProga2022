@@ -1,0 +1,163 @@
+//Gaytán Brieño Ernesto Armando (24-marzo-2022)
+//Pseudocódigo para el juego de Mastermind
+
+Declaración de tipos: Variables booleanas ENTEROS Verdadreo=1, Falso=0
+Declaración: CPUOpc[4], P1Opc[4], InicioOp, i,JRes=0,JCont=0,PerderCont=0,
+             GanarCont=0,Intentos=0,Perder=0
+INICIO
+        PARA i=0 HASTA 4 CON PASO 1 HACER
+                P1Opc[i]=0
+                CPUOpc[i]=0
+        FIN_PARA
+
+        IntentosCont = FUNCION Intentos
+
+        FUNCION ColoresCPU
+
+        FUNCION MenuInicio
+
+        SI InicioOp == 1 ENTONCES
+
+                MIENTRAS Jres == 0 HACER
+
+                        JCont++
+
+                        SI JCont > 1 ENTONCES
+                        IMPRIMIR "1-Rojo"
+                        IMPRIMIR "2-Naranja"
+                        IMPRIMIR "3-Amarillo"
+                        IMPRIMIR "4-Verde"
+                        IMPRIMIR "5-Azul"
+                        IMPRIMIR "6-Café"
+                        IMPRIMIR "7-Morado"
+                        FIN_SI
+
+                FUNCION ObtenerP1Opc
+
+                FUNCION OpcionesColor
+
+                JRes = FUNCION CompararColores
+
+                        SI JCont == IntentosCont Y JRes != 1 ENTONCES
+                                IMPRIMIR "Fin del Juego"
+                                PerderCont++
+                                Perder = 1
+                                BREAK
+                        FIN_SI
+
+                FIN_MIENTRAS
+
+        FIN_SI
+
+        SINO InicioOp == 2
+                SALIR
+        FIN_SINO
+FIN
+
+FUNCION ENTERO MenuInicio (VACIO)
+        ENTERO opcion
+
+        MIENTRAS opcion != 1 Y opcion != 2 HACER
+        IMPRIMIR "Bienvenido al juego (instrucciones)"
+        IMPRIMIR "Oprima 1 para continuar o 2 para salir"
+        LEER opcion
+        FIN_MIENTRAS
+
+        REGRESAR opcion
+FIN_FUNCION
+
+FUNCION ENTERO Intentos (VACIO)
+        ENTERO intC
+
+        IMPRIMIR "¿Cuántos intentos (5-10)?"
+        LEER intC
+
+        SI intC < 5 O intC > 10
+                IMPRIMIR "Error"
+        FIN_SI
+
+        REGRESAR intC
+FIN_FUNCION
+
+FUNCION ENTERO ColoresCPU (VACIO)
+        ENTERO i, RNum
+        PARA i=0 HASTA 4 CON PASO 1 HACER
+                RNum=AZAR(7)+1
+                CPUOpc[i]=RNum
+          FIN_PARA
+FIN_FUNCION
+
+FUNCION ENTERO ObtenerP1Opc (VACIO)
+        ENTERO i
+        PARA i=0 HASTA 4 CON PASO 1 HACER
+                MIENTRAS P1Opc[i]<1 O P1Opc[i]>7 HACER
+                        IMPRIMIR "Ingresa 4 números del 1 al 7 para los colores: "
+                        LEER P1Opc[i]
+                                SI P1Opc[i]<1 O P1Opc[i]>7 ENTONCES
+                                        IMPRIMIR "Error."
+                                FIN_SI
+                FIN_MIENTRAS
+        FIN_PARA
+FIN_FUNCION
+
+FUNCION ENTERO OpcionesColor (VACIO)
+        ENTERO i
+        IMPRIMIR "Colores elegidos: "
+        PARA i=0 HASTA 4 CON PASO 1 HACER
+                SEGUN P1Opc[i] HACER
+                        CASO 1: IMPRIMIR "Rojo"
+                                BREAK
+                        CASO 2: IMPRIMIR "Naranja"
+                                BREAK
+                        CASO 3: IMPRIMIR "Amarillo"
+                                BREAK
+                        CASO 4: IMPRIMIR "Verde"
+                                BREAK
+                        CASO 5: IMPRIMIR "Azul"
+                                BREAK
+                        CASO 6: IMPRIMIR "Café"
+                                BREAK
+                        CASO 7: IMPRIMIR "Morado"
+                                BREAK
+                FIN_SEGUN
+        FIN_PARA
+FIN_FUNCION
+
+FUNCION BOOLEANA CompararColores
+        ENTERO i,j,espigabl=0,espigang=0,bucle=-1
+        PARA i=0 HASTA 4 CON PASO 1 HACER
+                PARA j=0 HASTA 4 CON PASO 1 HACER
+                          SI P1Opc[i] == CPUOpc[j] ENTONCES
+                                SI i != j ENTONCES
+                                        SI i != bucle ENTONCES
+                                                bucle=i
+                                                espigabl++
+                                        FIN_SI
+                                        SINO
+                                                CONTINUAR
+                                        FIN_SINO
+                                FIN_SI
+                                SI i == j ENTONCES
+                                        SI i == bucle ENTONCES
+                                                espigang++
+                                                j=4
+                                                espigabl=1
+                                        FIN_SI
+                                        SINO
+                                                espigang++
+                                                j=4
+                                        FIN_SINO
+                                FIN_SI
+                        FIN_SI
+                FIN_PARA
+        FIN_PARA
+        IMPRIMIR "Tienes (espigang) Espigas negras y (espigabl) Espigas blancas."
+        SI espigang == 4 ENTONCES
+                IMPRIMIR "Ganaste"
+                GanarCont++
+                REGRESAR 1
+        FIN_SI
+        SINO
+                REGRESAR 0
+        FIN_SINO
+FIN_FUNCION
