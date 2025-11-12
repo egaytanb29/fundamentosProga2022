@@ -1,0 +1,11 @@
+1. Inicio
+2. #horario ->  Martes 9:00 a 11:00 hrs.
+3. Usuario "Hola"
+4. Bot "Hola, buen día. Estas hablando con un chatbot por favor seleciona una de las siguientes opciones:
+        a)Clima
+        b)Noticias última hora
+        c)Agenda"
+5. Usuario "a)Clima" -> Bot "Poner clima".
+            b)Noticias
+            c) Agenda
+6.Fin
